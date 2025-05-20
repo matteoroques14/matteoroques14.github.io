@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Mattéo ROQUES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2196F3;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .navbar-name {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0;
+            position: relative;
+            z-index: 1002;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 40px;
+        }
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+        .navbar-links a:hover {
+            color: #e3f2fd;
+        }
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1002;
+            margin-left: auto;
+        }
+        .burger-menu span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        @media screen and (max-width: 830px) {
+            .burger-menu {
+                display: flex;
+            }
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: #2196F3;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.3s ease;
+                gap: 30px;
+                z-index: 1001;
+            }
+            .navbar-links.active {
+                right: 0;
+            }
+            .burger-menu.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .burger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .burger-menu.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+        body {
+            margin-top: 80px;
+            padding: 20px;
+            font-family: Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .experience-item, .formation-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        li:before {
+            content: "•";
+            color: #2196F3;
+            position: absolute;
+            left: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <h1 class="navbar-name">Mattéo ROQUES</h1>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="navbar-links">
+                <a href="#competences">Compétences</a>
+                <a href="#experiences">Expériences</a>
+                <a href="#qualites">Qualités</a>
+                <a href="#hobbies">Hobbies</a>
+                <a href="#etudes">Etudes</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navbarLinks = document.querySelector('.navbar-links');
+        const links = document.querySelectorAll('.navbar-links a');
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navbarLinks.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navbarLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <div class="container">
+        <h1>Mattéo ROQUES</h1>
+        <h2>Développeur Web</h2>
+        <div style="background-color: #f5f5f5; padding: 15px; margin: 20px 0; border-left: 4px solid #2196F3;">
+            <h3 style="margin-top: 0; color: #2196F3;">Parcours Académique</h3>
+            <p>Première année de médecine</p>
+            <p>Deuxième année de BUT Chimie</p>
+        </div>
+
+        <section id="competences">
+            <h3>Compétences</h3>
+            <div class="competences-grid">
+                <div>
+                    <h4>Langages de Programmation</h4>
+                    <ul>
+                        <li>HTML/CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Outils</h4>
+                    <ul>
+                        <li>Git</li>
+                        <li>VS Code</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiences">
+            <h3>Expériences</h3>
+            <div class="experience-item">
+                <h4>Stage développeur web</h4>
+                <p>2024</p>
+                <ul>
+                    <li>Développement front-end</li>
+                    <li>Intégration de maquettes</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h4>Stage développeur web</h4>
+                <p>2023</p>
+                <ul>
+                    <li>Développement back-end</li>
+                    <li>Base de données</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="qualites">
+            <h3>Qualités</h3>
+            <ul>
+                <li>Rigoureux</li>
+                <li>Autonome</li>
+                <li>Esprit d'équipe</li>
+                <li>Curieux</li>
+                <li>Adaptable</li>
+            </ul>
+        </section>
+
+        <section id="hobbies">
+            <h3>Hobbies</h3>
+            <ul>
+                <li>Programmation</li>
+                <li>Sport</li>
+                <li>Lecture</li>
+                <li>Voyages</li>
+            </ul>
+        </section>
+
+        <section id="etudes">
+            <h3>Formation</h3>
+            <div class="formation-item">
+                <h4>BTS SIO</h4>
+                <p>2024-2025</p>
+            </div>
+            <div class="formation-item">
+                <h4>Baccalauréat S</h4>
+                <p>2022-2024</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Contact</h3>
+            <p>Email: matteo.roques.14@gmail.com</p>
+            <p>Téléphone: 06 06 06 06 06</p>
+            <p>Adresse: 123 Rue de la Paix, 75000 Paris</p>
+        </section>
+    </div>
+</body>
+</html>
