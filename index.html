@@ -1,274 +1,1047 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Mattéo ROQUES</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #2E7D32;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        .navbar-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .navbar-name {
-            color: white;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 0;
-            position: relative;
-            z-index: 1002;
-        }
-        .navbar-links {
-            display: flex;
-            gap: 40px;
-        }
-        .navbar-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 5px 10px;
-        }
-        .navbar-links a:hover {
-            color: #e8f5e9;
-        }
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 1002;
-            margin-left: auto;
-        }
-        .burger-menu span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background-color: white;
-            transition: all 0.3s ease;
-        }
-        @media screen and (max-width: 830px) {
-            .burger-menu {
-                display: flex;
-            }
-            .navbar-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100vh;
-                background-color: #2E7D32;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: right 0.3s ease;
-                gap: 30px;
-                z-index: 1001;
-            }
-            .navbar-links.active {
-                right: 0;
-            }
-            .burger-menu.active span:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
-            }
-            .burger-menu.active span:nth-child(2) {
-                opacity: 0;
-            }
-            .burger-menu.active span:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
-            }
-        }
-        body {
-            margin-top: 80px;
-            padding: 20px;
-            font-family: Verdana, sans-serif;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        section {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .competences-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .experience-item, .formation-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin: 8px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-        li:before {
-            content: "•";
-            color: #2E7D32;
-            position: absolute;
-            left: 0;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta content="follow,index" name="robots" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+
+  <title>
+    Mattéo ROQUES
+  </title>
+  <link rel="stylesheet" href="/assets/custom.css?v=20240613">
+  <meta name="description" content="Mattéo ROQUES">
+
+  <script src="/assets/js/scrolling-animations.js" defer></script>
+  <script src="/assets/js/mobile-navbar.js" defer></script>
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="/assets/js/swiper-init.js"></script>
+  <script src="/assets/js/onload.js" defer></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-20X2SWRKM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-20X2SWRKM1');
+</script>
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon-min.png" />
+
+  <style>
+    /* Styles pour les éléments déroulants */
+    .experience-title {
+      font-weight: bold;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin: 10px 0;
+      background-color: #f5f5f5;
+    }
+
+    .text-center {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .competences-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: center;
+      justify-items: center;
+      align-items: stretch;
+      grid-auto-rows: 1fr;
+    }
+    .competences-grid .card {
+      width: 95%;
+    }
+    @media (max-width: 900px) {
+      .competences-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: flex-start;
+      align-self: stretch;
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card p, .card ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 0;
+    }
+
+    .card ul {
+      list-style: disc inside;
+      margin-bottom: 1rem;
+    }
+
+    .card .expand-button {
+      margin-top: 1rem;
+    }
+
+    .card .expand-content {
+      margin-top: 0;
+    }
+
+    .experience-table {
+      width: 100%;
+      max-width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      float: none;
+      display: table;
+    }
+
+    .experience-table td {
+      padding: 10px;
+      border: none;
+      background-color: transparent;
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .experience-table tr {
+      height: 3.5rem;
+    }
+
+    .experience-table td:first-child {
+      width: 20%;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 0;
+      white-space: nowrap;
+    }
+
+    .experience-table td:nth-child(2),
+    .experience-table td:last-child {
+      white-space: nowrap;
+    }
+
+    .expand-button {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: #2E7D32;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+      transition: all 0.3s ease;
+      margin: 10px 0 0 0;
+    }
+
+    .expand-button:hover {
+      background-color: #84b083;
+    }
+
+    .expand-button::after {
+      content: '+';
+      margin-left: 8px;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .expand-button.expanded {
+      width: 100%;
+      text-align: left;
+      border-radius: 4px 4px 0 0;
+      margin-bottom: 0;
+    }
+
+    .expand-button.expanded::after {
+      content: '-';
+      position: absolute;
+      right: 15px;
+    }
+
+    .expand-content {
+      display: none;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      margin-top: 0;
+    }
+
+    .expand-content.show {
+      display: block;
+    }
+
+    .expand-content p {
+      padding-left: 3.5px;
+      margin-left: 0;
+    }
+
+    .expand-content ul {
+      padding-left: 20px;
+    }
+
+    .wrapper.cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: stretch;
+      grid-auto-rows: 1fr;
+      max-width: 1500px;
+      width: 100%;
+      margin: 0 auto 2rem auto;
+      box-sizing: border-box;
+    }
+    .card.value {
+      width: 100%;
+    }
+    .card.value img {
+      max-width: 80px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+    .competences-grid ul,
+    .card.value ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background: rgba(0,0,0,0.4);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10vh auto;
+      padding: 2rem 2.5rem;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      position: relative;
+      text-align: center;
+    }
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2rem;
+      color: #333;
+      cursor: pointer;
+    }
+    .modal-button {
+      background-color: #2E7D32;
+      color: #fff;
+      border: none;
+      /*border-radius: 4px;*/
+      padding: 10px 22px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .modal-button:hover {
+      background-color: #84b083;
+    }
+
+    #experiences.content {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .wrapper.column-2 {
+      justify-content: flex-start !important;
+    }
+
+    #experiences .experience-table {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      display: block;
+    }
+
+    @media (max-width: 1200px) {
+      .experience-table, #etudes-table {
+        width: 90vw !important;
+        font-size: 0.95rem !important;
+      }
+      .experience-table td:first-child, #etudes-table td:first-child {
+        width: 25% !important;
+      }
+      .experience-table td:nth-child(2), #etudes-table td:nth-child(2) {
+        width: 45% !important;
+      }
+      .experience-table td:last-child, #etudes-table td:last-child {
+        width: 30% !important;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .experience-table, #etudes-table {
+        width: 95vw !important;
+        font-size: 0.9rem !important;
+      }
+      .experience-table td, #etudes-table td {
+        padding: 8px 6px !important;
+      }
+    }
+
+    @media (max-width: 800px) {
+      #etudes-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      #etudes-flex > div:first-child {
+        order: 2 !important;
+        margin-top: 2rem !important;
+      }
+      #etudes-flex > div:last-child {
+        order: 1 !important;
+        width: 100% !important;
+        align-items: center !important;
+      }
+      #etudes-img {
+        max-width: 70vw !important;
+        max-height: 180px !important;
+        margin: 0 auto !important;
+      }
+      .experience-table, #etudes-table {
+        width: 95vw !important;
+        min-width: 0 !important;
+        font-size: 0.9rem !important;
+        margin: 0 auto !important;
+        display: block !important;
+        overflow-x: auto !important;
+      }
+      .experience-table td, #etudes-table td {
+        padding: 8px 4px !important;
+        white-space: normal !important;
+        vertical-align: top !important;
+      }
+      .experience-table td:first-child, #etudes-table td:first-child {
+        width: 30% !important;
+        font-size: 0.85rem !important;
+        padding-right: 8px !important;
+      }
+      .experience-table td:nth-child(2), #etudes-table td:nth-child(2) {
+        width: 40% !important;
+      }
+      .experience-table td:last-child, #etudes-table td:last-child {
+        width: 30% !important;
+      }
+      #etudes-flex h2 {
+        text-align: center !important;
+        margin-right: 0 !important;
+      }
+      #experiences-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+      #experiences-flex > div:first-child {
+        width: 100% !important;
+        align-items: center !important;
+      }
+      #experiences-flex h2 {
+        text-align: center !important;
+        margin-right: 0 !important;
+      }
+      #experiences-img {
+        max-width: 70vw !important;
+        max-height: 180px !important;
+        margin: 1.5rem auto 0 auto !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .experience-table, #etudes-table {
+        width: 98vw !important;
+        font-size: 0.85rem !important;
+      }
+      .experience-table td:first-child, #etudes-table td:first-child {
+        width: 35% !important;
+        font-size: 0.8rem !important;
+      }
+      .experience-table td:nth-child(2), #etudes-table td:nth-child(2) {
+        width: 35% !important;
+      }
+      .experience-table td:last-child, #etudes-table td:last-child {
+        width: 30% !important;
+        font-size: 0.8rem !important;
+      }
+      .experience-table td, #etudes-table td {
+        padding: 6px 3px !important;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .experience-table, #etudes-table {
+        font-size: 0.8rem !important;
+      }
+      .experience-table td:first-child, #etudes-table td:first-child {
+        width: 40% !important;
+        font-size: 0.75rem !important;
+      }
+      .experience-table td:nth-child(2), #etudes-table td:nth-child(2) {
+        width: 30% !important;
+      }
+      .experience-table td:last-child, #etudes-table td:last-child {
+        width: 30% !important;
+        font-size: 0.75rem !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        background: white;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem 2rem;
+        height: 4.5rem;
+        overflow: hidden;
+      }
+  
+      nav ul {
+        display: none;
+        position: fixed;
+        top: 4.5rem;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 4.5rem);
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.75rem;
+        margin: 0;
+        padding: 0;
+      }
+  
+      nav li:not(.menu-element) {
+        display: none;
+      }
+  
+      nav .mobile-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+  
+      nav .mobile-header img,
+      nav .mobile-header svg {
+        height: 2rem;
+      }
+  
+      #navbar-x-icon {
+        display: none;
+      }
+  
+      nav.open {
+        height: 100vh;
+        overflow: visible;
+      }
+  
+      nav.open #navbar-x-icon {
+        display: block;
+      }
+  
+      nav.open #navbar-bar-icon {
+        display: none;
+      }
+  
+      nav.open ul {
+        display: flex;
+      }
+  
+      nav li {
+        font-size: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+  
+      nav li.menu-element {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+  
+      nav li.menu-element a {
+        width: auto;
+        color: #2E7D32;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+      }
+
+      #navbar-bar-icon, #navbar-x-icon {
+        cursor: pointer;
+      }
+      
+      #contact .wrapper {
+        padding: 2rem !important;
+      }
+      
+      #contact > div {
+        flex-direction: column !important;
+      }
+      
+      #contact > div > div:first-child {
+        order: 2 !important;
+        margin-top: 2rem !important;
+      }
+      
+      #contact > div > div:last-child {
+        order: 1 !important;
+        padding-left: 0 !important;
+      }
+      
+      #contact img {
+        max-width: 70vw !important;
+        max-height: 180px !important;
+        margin: 0 auto !important;
+      }
+      
+      #contact table {
+        margin: 0 auto 1.5rem auto !important;
+      }
+      
+      #contact table tr:first-child {
+        display: none !important;
+      }
+      
+      #contact table tr:last-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+      }
+      
+      #contact table td {
+        padding: 0.5rem !important;
+        text-align: center !important;
+      }
+      
+      #contact table td::before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Ajuster le contenu principal pour éviter le chevauchement avec la navbar fixe */
+      #scroll-indicator {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .wrapper.column-2.reverse {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      
+      .wrapper.column-2.reverse > div:first-child {
+        order: 2 !important;
+        margin-top: 2rem !important;
+      }
+      
+      .wrapper.column-2.reverse > div:last-child {
+        order: 1 !important;
+      }
+      
+      .wrapper.column-2.reverse img {
+        max-width: 70vw !important;
+        max-height: 180px !important;
+        margin: 0 auto !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #experiences, #experiences + div {
+        flex-direction: column !important;
+        margin: 4rem auto !important;
+      }
+      
+      #experiences > div:first-child,
+      #etudes {
+        order: 2 !important;
+        width: 100% !important;
+        align-items: center !important;
+      }
+      
+      #experiences > div:last-child,
+      #etudes + div {
+        order: 1 !important;
+        margin-bottom: 2rem !important;
+      }
+      
+      #experiences h2,
+      #etudes h2 {
+        margin: 0 auto 1.2rem auto !important;
+        text-align: center !important;
+      }
+      
+      #experiences-img,
+      #etudes-img {
+        max-width: 70vw !important;
+        max-height: 180px !important;
+        margin: 0 auto !important;
+      }
+      
+      .experience-table {
+        width: 95vw !important;
+        margin: 0 auto !important;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.expand-button');
+      
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          const isExpanded = this.classList.contains('expanded');
+          
+          // Toggle button state
+          this.classList.toggle('expanded');
+          
+          // Toggle content visibility
+          if (isExpanded) {
+            content.classList.remove('show');
+          } else {
+            content.classList.add('show');
+          }
+        });
+      });
+    });
+  </script>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <h1 class="navbar-name">Mattéo ROQUES</h1>
-            <div class="burger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="navbar-links">
-                <a href="#competences">Compétences</a>
-                <a href="#experiences">Expériences</a>
-                <a href="#qualites">Qualités</a>
-                <a href="#hobbies">Hobbies</a>
-                <a href="#etudes">Etudes</a>
-            </div>
-        </div>
-    </nav>
+  <nav style="background-color: #2E7D32;">
+    <div class="mobile-header">
+      <a href="https://matteoroques14.github.io#landing-section">
+        <img src="/assets/img/logo-fond-blanc.jpg" alt="fullcolor company logo" />
+      </a>
+      <div id="navbar-bar-icon">
+        <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="2" fill="black" />
+          <rect y="12" width="28" height="2" fill="black" />
+          <rect y="23" width="28" height="2" fill="black" />
+        </svg>
 
-    <script>
-        const burgerMenu = document.querySelector('.burger-menu');
-        const navbarLinks = document.querySelector('.navbar-links');
-        const links = document.querySelectorAll('.navbar-links a');
-
-        burgerMenu.addEventListener('click', () => {
-            burgerMenu.classList.toggle('active');
-            navbarLinks.classList.toggle('active');
-        });
-
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu.classList.remove('active');
-                navbarLinks.classList.remove('active');
-            });
-        });
-    </script>
-
-    <div class="container">
-        <h1>Mattéo ROQUES</h1>
-        <h2>Développeur Web</h2>
-        <div style="background-color: #f5f5f5; padding: 15px; margin: 20px 0; border-left: 4px solid #2E7D32;">
-            <h3 style="margin-top: 0; color: #2E7D32;">Parcours Académique</h3>
-            <p>Première année de médecine</p>
-            <p>Deuxième année de BUT Chimie</p>
-        </div>
-
-        <section id="competences">
-            <h3>Compétences</h3>
-            <div class="competences-grid">
-                <div>
-                    <h4>Langages de Programmation</h4>
-                    <ul>
-                        <li>HTML/CSS</li>
-                        <li>JavaScript</li>
-                        <li>PHP</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Outils</h4>
-                    <ul>
-                        <li>Git</li>
-                        <li>VS Code</li>
-                        <li>Figma</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="experiences">
-            <h3>Expériences</h3>
-            <div class="experience-item">
-                <h4>Stage développeur web</h4>
-                <p>2024</p>
-                <ul>
-                    <li>Développement front-end</li>
-                    <li>Intégration de maquettes</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h4>Stage développeur web</h4>
-                <p>2023</p>
-                <ul>
-                    <li>Développement back-end</li>
-                    <li>Base de données</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="qualites">
-            <h3>Qualités</h3>
-            <ul>
-                <li>Rigoureux</li>
-                <li>Autonome</li>
-                <li>Esprit d'équipe</li>
-                <li>Curieux</li>
-                <li>Adaptable</li>
-            </ul>
-        </section>
-
-        <section id="hobbies">
-            <h3>Hobbies</h3>
-            <ul>
-                <li>Programmation</li>
-                <li>Sport</li>
-                <li>Lecture</li>
-                <li>Voyages</li>
-            </ul>
-        </section>
-
-        <section id="etudes">
-            <h3>Formation</h3>
-            <div class="formation-item">
-                <h4>BTS SIO</h4>
-                <p>2024-2025</p>
-            </div>
-            <div class="formation-item">
-                <h4>Baccalauréat S</h4>
-                <p>2022-2024</p>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h3>Contact</h3>
-            <p>Email: matteo.roques.14@gmail.com</p>
-            <p>Téléphone: 06 06 06 06 06</p>
-            <p>Adresse: 123 Rue de la Paix, 75000 Paris</p>
-        </section>
+      </div>
+      <div id="navbar-x-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.80786" y="0.393311" width="28" height="2" transform="rotate(45 1.80786 0.393311)" fill="black" />
+          <rect x="0.393799" y="20.1924" width="28" height="2" transform="rotate(-45 0.393799 20.1924)" fill="black" />
+        </svg>
+      </div>
     </div>
+    <ul>
+      <li class="menu-element left"><a href="#competences">Compétences</a></li>
+      <li class="menu-element left"><a href="#experiences">Expériences</a></li>
+      <li class="menu-element left"><a href="#etudes">Études</a></li>
+      <li>
+        <a href="#landing-section">
+          <img class="logo" src="/assets/img/logo-fond-blanc.jpg" alt="fullcolor company logo" />
+        </a>
+      </li>
+      <li class="menu-element right"><a href="#qualites">Qualités</a></li>
+      <li class="menu-element right"><a href="#hobbies">Hobbies</a></li>
+      <li class="menu-element right"><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="index-page" class="page">
+    <div id="landing-section" class="wrapper banner">
+      <div>
+        <img class="logo" src="/assets/img/logo-fond-blanc.jpg" height="192" alt="colored company logo">
+
+        <h1 class="title">Jeune chimiste cherche entreprise pour évoluer</h1>
+        <p>
+          Si vous pensez que mon profil correspond à vos attentes, 
+          <br />je vous invite à parcourir mon site pour en savoir plus, 
+          <br />et à me contacter si vous souhaitez échanger.
+          <br />
+          <br />
+          Je suis admis dans un cursus ingénieur en chimie <br />
+          et je cherche une alternance pour la rentrée 2025.
+        </p>
+      </div>
+      <div id="scroll-indicator" class="hidden">
+        Scroll
+        <svg width="35" height="14" viewBox="0 0 35 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M27.5 1.5L33.5 7.5" stroke="black" stroke-width="2" stroke-linecap="round" />
+          <path d="M27.5 12.5L33.5 7.5" stroke="black" stroke-width="2" stroke-linecap="round" />
+          <path d="M1.5 7.5L33.5 7.5" stroke="black" stroke-width="2" stroke-linecap="round" />
+        </svg>
+
+      </div>
+    </div>
+
+    <div id="values">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Ce que je cherche</h2>
+      <div class="wrapper cards">
+        <div class="card value">
+          <img src="/assets/img/domaine-vert-gras.jpg" alt="domaine" style="width: 45px;margin-bottom:26px;">
+          <h4>Domaine</h4>
+          <p class="text-m">
+            Je cherche à intégrer une entreprise dans les domaines <strong>pharmaceutique</strong>,
+            <strong>cosmétique</strong>, de la <strong>parfumerie</strong> ou des <strong>arômes</strong>.
+            <br /><br />
+            Ce sont des secteurs qui me passionnent, à la croisée de la science, de l'innovation et avec un impact réel.
+            J'ai envie de m'impliquer pleinement et de participer activement à des projets porteurs de sens.
+          </p>
+        </div>
+        <div class="card value">
+         <img src="/assets/img/service-vert-gras-court.jpg" alt="service" style="width: 45px;margin-bottom:21px;">
+          <h4>Service</h4>
+          <p class="text-m">
+            Je souhaite rejoindre un service <strong>R&D</strong>, là où les idées prennent forme et où l'innovation se
+            construit au quotidien.
+            <br /><br />
+            <br />
+            S'informer, tester, comprendre, améliorer.
+            J'ai envie de participer à la création de solutions concrètes et utiles, tout en développant mes compétences
+            techniques et scientifiques et en apportant ma pierre à l'édifice.
+          </p>
+        </div>
+        <div class="card value">
+          <img src="/assets/img/conditions-vert-thin.jpg" alt="conditions" style="width: 45px;margin-bottom:14px;">
+          <h4>Conditions</h4>
+          <p class="text-m">
+            Je suis à la recherche d'une <strong>alternance de 36 mois en France</strong>, avec un rythme d'<strong>un
+              mois en école et un mois en entreprise</strong> à partir d'octobre 2025.
+            <br /><br />
+            Cette formation inclut également <strong>neuf semaines de mobilité internationale</strong>.
+            Je suis motivé à m'investir sur le long terme dans un projet stimulant,
+            au sein d'une équipe motivée et engagée qui me permettra de monter en compétences.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="wrapper reverse">
+        <div id="competences" class="content" style="max-width: 1000px; margin: 0 auto;">
+          <div>
+            <h2  class="text-center">
+              <i>Compétences</i>
+            </h2>
+            <div class="competences-grid">
+              <div class="card">
+                <img src="/assets/img/competences-analyse.jpg" alt="conditions" style="width: 45px;margin-bottom:20px;">
+                <h3 style="text-align: center;">Analyse</h3>
+                <ul class="text-light-grey">
+                  <li>ATG/DSC</li>
+                  <li>Diffraction des rayons X</li>
+                  <li>Chromatographie : CPG, HPLC</li>
+                  <li>Spectroscopie : RMN, IR, UV-visible</li>
+                  <li>Polarographie à impulsions différentielles</li>
+                </ul>
+              </div>
+              <div class="card">
+                <img src="/assets/img/competences-synthese.jpg" alt="conditions" style="width: 45px;margin-bottom:25px;">
+                <h3 style="text-align: center;">Synthèse</h3>
+                <ul class="text-light-grey">
+                  <li>Séparation</li>
+                  <li>Purification</li>
+                  <li>Dopage</li>
+                  <li>Polycondensation</li>
+                  <li>Polymérisation radicalaire</li>
+                </ul>
+              </div>
+              <div class="card">
+                <img src="/assets/img/competences-procede.jpg" alt="conditions" style="width: 45px;margin-bottom:20px;">
+                <h3 style="text-align: center;">Procédé</h3>
+                <ul class="text-light-grey">
+                  <li>Fluidisation</li>
+                  <li>Rectification</li>
+                  <li>Étude de pompes</li>
+                  <li>Montage Dean-Stark</li>
+                  <li>Transferts thermiques</li>
+                  <li>Extraction liquide-liquide</li>
+                  <li>Résines échangeuses d'ions</li>
+                </ul>
+              </div>
+              <div class="card">
+                <img src="/assets/img/competences-logiciel.jpg" alt="conditions" style="width: 45px;margin-bottom:23px;">
+                <h3 style="text-align: center;">Logiciel</h3>
+                <ul class="text-light-grey">
+                  <li>Pack Office</li>
+                  <li>Pack Google</li>
+                  <li>ChemDraw </li>
+                  <li>TopSpin (RMN)</li>
+                  <li>Highscore (DRX)</li>
+                  <li>Nova (Polarographie)</li>
+                  <li>Azur (Chromatographie)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="experiences" style="display: flex; width: 100%; max-width: 100vw; margin: 8rem auto 8rem auto; flex-direction: row;">
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start;">
+          <h2 style="margin: 0 56.5% 1.2rem 0; text-align: left; min-width: 120px;"><i>Expériences</i></h2>
+          <table class="experience-table" id="experiences-table" style="width: 60%; min-width: 500px; margin-right: 0;">
+            <tr>
+              <td>09/2025 - 08/2028</td>
+              <td>Ingénieur chimiste en alternance</td>
+              <td><strong>Votre entreprise</strong></td>
+            </tr>
+            <tr>
+              <td>06/2025 - 08/2025</td>
+              <td>Technicien développement de méthode<br>en microfluidique</td>
+              <td>IFPEN Rueil (92)</td>
+            </tr>
+            <tr>
+              <td>07/2024 - 08/2024</td>
+              <td>Agent d'entretien des espaces verts</td>
+              <td>Ville de Maisons-Laffitte (78)</td>
+            </tr>
+          </table>
+        </div>
+        <div style="flex: 0 0 40%; display: flex; justify-content: center; align-items: center;">
+          <img src="/assets/img/experiences.jpg" alt="Icône expériences" id="experiences-img" style="max-width: 320px; max-height: 420px; width: auto; height: auto; object-fit: contain;" />
+        </div>
+      </div>
+      <div style="display: flex; width: 100%; max-width: 100vw; margin: 16rem auto 3rem auto; flex-direction: row;">
+        <div style="flex: 0 0 40%; display: flex; justify-content: center; align-items: center; margin-bottom: 40px">
+          <img src="/assets/img/etudes-new.jpg" alt="Icône études" id="etudes-img" style="max-width: 320px; max-height: 420px; width: auto; height: auto; object-fit: contain;" />
+        </div>
+        <div id="etudes" style="flex: 1; display: flex; flex-direction: column; align-items: flex-end;">
+          <h2 style="margin: 0 56.5% 1.2rem 0; text-align: left; min-width: 120px;"><i>Études</i></h2>
+          <table class="experience-table" id="etudes-table" style="width: 60%; min-width: 500px;">
+            <tr>
+              <td>2025 - 2028</td>
+              <td>Ingénieur chimiste en alternance</td>
+              <td>ENSCMu - Mulhouse (68)<br/> <strong>ou</strong> ESCOM - Compiègne (60)</td>
+            </tr>
+            <tr>
+              <td>2024 - 2025</td>
+              <td>BUT Chimie</td>
+              <td>IUT d'Orsay - Orsay (91)</td>
+            </tr>
+            <tr>
+              <td>2023 - 2024</td>
+              <td>PASS <br/>Parcours Accès Spécifique Santé</td>
+              <td>Université Paris Saclay - Orsay (91)</td>
+            </tr>
+            <tr>
+              <td>2021 - 2023</td>
+              <td>Baccalauréat Physique-Chimie/SVT <br/> Mention Bien</td>
+              <td>Lycée Le Bon Sauveur - Le Vésinet (78)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="qualites" class="wrapper column-2 ">
+        <div class="content">
+          <div>
+            <h2 >
+              <i>Qualités</i>
+            </h2>
+            <p class="text-m" style="color: #666;">
+              Ma <strong>curiosité naturelle</strong> m'amène à explorer de nouveaux domaines et à apprendre par moi-même. 
+              Dans cette démarche, j'ai pris l'initiative de créer mon propre site CV avec l'aide de mon frère. 
+              Pour cela, j'ai dû décoder et comprendre les bases en HTML et CSS, langage essentiel pour le développement web. 
+              Cette capacité à m'auto-former illustre mon envie d'<strong>évoluer</strong> et de <strong>m'adapter</strong> aux besoins du monde professionnel.
+              <br />
+              <br />
+              Au cours de mon BUT Chimie, j'ai eu l'opportunité de participer à de nombreux travaux pratiques en binôme ou en petit groupe.
+              Ces expériences m'ont appris à collaborer efficacement, à partager les responsabilités et à échanger de manière constructive avec mes camarades.
+              Cette capacité à <strong>travailler en équipe</strong> est pour moi essentielle, tant en laboratoire que dans tout environnement professionnel.
+              <br />
+              <br />
+              Je suis également <strong>à l'aise à l'oral</strong>, que ce soit en petit groupe ou devant un public. 
+              Cela me permet de mieux échanger avec les autres, de faire avancer les discussions en équipe et de transmettre mes idées clairement pendant les exposés ou les présentations. 
+              J'arrive à adapter mon discours selon la situation, ce qui rend les échanges plus fluides et efficaces.
+            </p>
+          </div>
+        </div>
+        <div style="flex: 0 0 40%; display: flex; justify-content: center; align-items: center;">
+          <img src="/assets/img/qualites.jpg" alt="Icône qualités" style="max-width: 320px; max-height: 420px; width: auto; height: auto; object-fit: contain;" />
+        </div>
+      </div>
+      <div  class="wrapper column-2 reverse">
+        <div id="hobbies" class="content" style="order: 2;">
+          <div>
+            <h2 >
+              <i>Hobbies</i>
+            </h2>
+            <p class="text-l">
+              Pour en apprendre un peu plus sur moi, voici quelques informations sur mes loisirs :
+            </p>
+            <br />
+            <p class="text-light-grey">
+              Je m'intéresse à la <strong>numismatique</strong> depuis plusieurs années. 
+              Je collectionne aussi bien des pièces anciennes que contemporaines, attiré par leur valeur historique, culturelle et parfois artistique.
+              C'est un loisir qui m'a appris la patience, la curiosité et le sens du détail.
+              <br /><br />
+              Passionné de <strong>football</strong> depuis petit, j'ai pratiqué ce sport en club pendant 7 ans. 
+              Ce sport m'a appris l'importance de l'esprit d'équipe, de la persévérance et du respect des autres. 
+              Aujourd'hui encore, je reste très impliqué en suivant l'actualité du ballon rond.
+              <br /><br />
+              Je contribue régulièrement à <strong>Wikipédia</strong>, principalement sur des articles liés au football. 
+              J'ai ainsi appris à utiliser le code wiki, à respecter les règles de publication collaborative et à produire un contenu clair, fiable et sourcé. 
+              C'est un excellent moyen de concilier passion et partage de connaissances.
+              <br /><br />
+              Le <strong>jardinage</strong> est pour moi une manière de me reconnecter à la nature. 
+              J'aime prendre soin des plantes, les embellir et observer leur évolution.
+              J'effectue de temps à autre des travaux de jardinage, comme la taille des arbustes et la plantation de fleurs.
+              C'est un loisir apaisant qui m'apporte équilibre et régularité.
+              <br /><br />
+              Les <strong>voyages</strong> occupent une place importante dans ma vie.
+              J'aime découvrir de nouveaux environnements aussi bien en France qu'à l'étranger, de nouvelles cultures et sortir de ma zone de confort. 
+              Cette ouverture me pousse à être ouvert et adaptable.
+            </p>
+          </div>
+        </div>
+        <div style="flex: 0 0 40%; display: flex; justify-content: center; align-items: center; order: 1;">
+          <img src="/assets/img/hobbies.jpg" alt="Icône hobbies" style="max-width: 420px; max-height: 520px; width: auto; height: auto; object-fit: contain;" />
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="wrapper" style="background-color: #f5f5f5; padding: 3rem 5rem; margin-bottom: 3rem;">
+      <h2>
+        <i>Contact et langues</i>
+      </h2>
+      <div style="display: flex; flex-direction: row; margin-top: 2rem;">
+        <div style="flex: 0 0 40%; display: flex; justify-content: center; align-items: flex-start;">
+          <img src="/assets/img/contact.jpg" alt="Icône contact" style="max-width: 420px; max-height: 520px; width: auto; height: auto; object-fit: contain;" />
+        </div>
+        <div class="content" style="flex: 1; padding-left: 2rem;">
+          <h3 style="margin-bottom: 1rem; text-align: center;">Langues</h3>
+          <table style="width: 100%; margin-bottom: 1.5rem; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 0.5rem; text-align: center;">
+                <img src="/assets/img/royaume-uni.jpg" alt="Rythme" style="width: 45px; height: 45px;" />
+              </td>
+              <td style="padding: 0.5rem; text-align: center;">
+                <img src="/assets/img/espagne.jpg" alt="Mobilité" style="width: 45px; height: 45px;" />
+              </td>
+              <td style="padding: 0.5rem; text-align: center;">
+                <img src="/assets/img/italie.jpg" alt="Mobilité" style="width: 45px; height: 45px;" />
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0.5rem; text-align: center; color: #666;" data-label="Anglais">B2</td>
+              <td style="padding: 0.5rem; text-align: center; color: #666;" data-label="Espagnol">B1</td>
+              <td style="padding: 0.5rem; text-align: center; color: #666;" data-label="Italien">B1</td>
+            </tr>
+          </table>
+          <h3 style="margin: 2rem 0 1rem 0; text-align: center;">Contact</h3>
+          <div style="margin-bottom: 2rem; text-align: center;">
+            <span style="color: #666; margin-right: 2rem;"><a href="mailto:matteo.roques.14@gmail.com" style="color: #0066cc; text-decoration: none;">Adresse Mail</a></span>
+            <span style="color: #666;"><a href="https://linkedin.com/in/matteoroques/" target="_blank" style="color: #0066cc; text-decoration: none;">LinkedIn</a></span>
+          </div>
+          <p class="text-l" style="color: #666;">
+            <br />
+            Si mon profil a retenu votre attention et que vous pensez que nous pourrions avancer ensemble, n'hésitez pas à me contacter à l'adresse <strong><a href="mailto:matteo.roques.14@gmail.com" style="color: #666; text-decoration: none;">matteo.roques.14@gmail.com</a></strong>.
+            <br />
+            Je suis motivé, curieux d'apprendre, et prêt à m'investir pleinement dans une entreprise qui saura m'accompagner dans mon parcours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background-color: #d2e1c3;">
+    <div id="footer" style="padding: 2rem; text-align: center;">
+      <p style="margin: 0; color: #2E7D32; font-size: 0.9rem;">
+        © 2025 Mattéo ROQUES - Tous droits réservés
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Script burger menu chargé');
+      const barIcon = document.querySelector("#navbar-bar-icon");
+      const xIcon = document.querySelector("#navbar-x-icon");
+      const nav = document.querySelector("nav");
+      const navLinks = document.querySelectorAll("nav .menu-element a");
+
+      console.log('barIcon:', barIcon);
+      console.log('xIcon:', xIcon);
+      console.log('nav:', nav);
+      console.log('navLinks:', navLinks);
+
+      function toggleMenu() {
+        console.log('toggleMenu appelé');
+        nav.classList.toggle("open");
+        barIcon.style.display = nav.classList.contains("open") ? "none" : "block";
+        xIcon.style.display = nav.classList.contains("open") ? "block" : "none";
+      }
+
+      if (barIcon && xIcon && nav) {
+        barIcon.addEventListener("click", function() {
+          console.log('barIcon cliqué');
+          toggleMenu();
+        });
+        xIcon.addEventListener("click", function() {
+          console.log('xIcon cliqué');
+          toggleMenu();
+        });
+        navLinks.forEach(link => link.addEventListener("click", function() {
+          console.log('Lien de menu cliqué');
+          toggleMenu();
+        }));
+      } else {
+        console.log('Un ou plusieurs éléments manquent pour le menu burger');
+      }
+    });
+  </script>
 </body>
+
 </html>

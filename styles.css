@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f9f7;
+  color: #00b191;
+}
+
+.key-figures {
+  display: flex;
+  padding: 60px;
+  min-height: 100vh;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel h1 {
+  font-size: 48px;
+  color: #b9e3d7;
+  margin-bottom: 40px;
+}
+
+.know-more {
+  font-size: 24px;
+  text-decoration: none;
+  color: #00b191;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #b9e3d7;
+  padding-top: 20px;
+  width: fit-content;
+}
+
+.figures-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 40px;
+  padding-left: 60px;
+}
+
+.figure h2 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.figure p {
+  font-size: 18px;
+  margin-top: 10px;
+}
