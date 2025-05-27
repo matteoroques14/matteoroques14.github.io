@@ -444,23 +444,23 @@
       }
   
       nav ul {
-        display: none;
-        position: fixed;
-        top: 4.5rem;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 4.5rem);
-        background: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2.75rem;
-        margin: 0;
-        padding: 0;
+        display: none !important;
       }
   
-      nav li:not(.menu-element) {
-        display: none;
+      nav.open ul {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: fixed !important;
+        top: 4.5rem !important;
+        left: 0 !important;
+        width: 100vw !important;
+        background: white !important;
+        z-index: 2000 !important;
+        gap: 1rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
   
       nav .mobile-header {
@@ -491,10 +491,6 @@
   
       nav.open #navbar-bar-icon {
         display: none;
-      }
-  
-      nav.open ul {
-        display: flex;
       }
   
       nav li {
@@ -1003,45 +999,6 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Script burger menu chargé');
-      const barIcon = document.querySelector("#navbar-bar-icon");
-      const xIcon = document.querySelector("#navbar-x-icon");
-      const nav = document.querySelector("nav");
-      const navLinks = document.querySelectorAll("nav .menu-element a");
-
-      console.log('barIcon:', barIcon);
-      console.log('xIcon:', xIcon);
-      console.log('nav:', nav);
-      console.log('navLinks:', navLinks);
-
-      function toggleMenu() {
-        console.log('toggleMenu appelé');
-        nav.classList.toggle("open");
-        barIcon.style.display = nav.classList.contains("open") ? "none" : "block";
-        xIcon.style.display = nav.classList.contains("open") ? "block" : "none";
-      }
-
-      if (barIcon && xIcon && nav) {
-        barIcon.addEventListener("click", function() {
-          console.log('barIcon cliqué');
-          toggleMenu();
-        });
-        xIcon.addEventListener("click", function() {
-          console.log('xIcon cliqué');
-          toggleMenu();
-        });
-        navLinks.forEach(link => link.addEventListener("click", function() {
-          console.log('Lien de menu cliqué');
-          toggleMenu();
-        }));
-      } else {
-        console.log('Un ou plusieurs éléments manquent pour le menu burger');
-      }
-    });
-  </script>
 </body>
 
 </html>
